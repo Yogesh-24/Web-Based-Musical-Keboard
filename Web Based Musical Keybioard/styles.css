@@ -1,0 +1,110 @@
+body {
+  text-align: center;
+  background-color: #f4f4f9;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #333;
+  font-family: "Arial Black", Gadget, sans-serif; /* Bold and modern look */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.set {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* Adjust height to fill remaining space */
+}
+
+.drum {
+  outline: none;
+  border: none;
+  font-size: 0;
+  border-radius: 50%;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.drum::before {
+  content: attr(data-key);
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  text-align: center;
+  line-height: 120px;
+  width: 100%;
+  height: 100%;
+}
+
+.drum:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.pressed {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ee6c4d, #3d5a80);
+  z-index: -1;
+}
+
+/* Specific drum button images */
+.w {
+  background-image: url("images/tom1.png");
+}
+
+.a {
+  background-image: url("images/tom2.png");
+}
+
+.s {
+  background-image: url("images/tom3.png");
+}
+
+.d {
+  background-image: url("images/tom4.png");
+}
+
+.j {
+  background-image: url("images/snare.png");
+}
+
+.k {
+  background-image: url("images/crash.png");
+}
+
+.l {
+  background-image: url("images/kick.png");
+}
